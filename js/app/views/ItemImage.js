@@ -14,6 +14,7 @@ define([
     templateId: "itemTemplatePic",
     initialize: function(){
       _.bindAll(this,"rightClick","clickSelected");
+      this.listenTo(this.model, "change", this.render);
       //this.$el.find(".image").rightClick(this.rightClick);
     },
     events: {
@@ -38,13 +39,18 @@ define([
     //添加选中状态class
     clickSelected: function(e){
       gallary.selectedItems.singleAdd(this);
-      $(e.target).parents("#J_Picture").find(".ui-selectee").removeClass("ui-selected");
-      this.$el.addClass("ui-selected");
+      gallary.itemCollection.unSelect();
+      this.model.select();
     },
     render:function(){
       var self = this;
       var html = new EJS({element:self.templateId}).render(this.model.toJSON());
       this.$el.html(html);
+      if(this.model.get("selected")){
+        this.$el.addClass("ui-selected");
+      }else{
+        this.$el.removeClass("ui-selected");
+      }
       return this;
     }
   });

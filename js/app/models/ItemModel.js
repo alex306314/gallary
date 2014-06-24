@@ -22,6 +22,7 @@ define([
       isref:0,       //是否引用
       freezed: 0,    //是否冻结图片
       why: "why",    //冻结原因
+      selected: false, //是否选中
       eurl: "",   //复制链接
       ecode: ""   //复制图片
     },
@@ -31,6 +32,12 @@ define([
         this.set({eurl: encodeURIComponent(this.get("url"))});
         this.set({ecode: encodeURIComponent('<img src="'+ this.get("url") +'" alt=" '+ this.get("name") + '"/>')});
       }
+    },
+    select: function(){
+      this.set({selected:true});
+    },
+    unSelect: function(){
+      this.set({selected:false});
     }
   });
 });

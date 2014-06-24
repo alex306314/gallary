@@ -14,6 +14,23 @@ define([
     singleAdd: function(item){
       this.reset();
       this.add(item);
+    },
+    //选中所有
+    select: function(){
+      this.each(function(item){
+        if(!item.get("selected")){
+          item.select();
+        }
+      });
+    },
+    // 所有项取消选择
+    unSelect: function(){
+      var self = this;
+      this.each(function(item){
+        if(item.get("selected")){
+          item.unSelect();
+        }
+      });
     }
   });
 });

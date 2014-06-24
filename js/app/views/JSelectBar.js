@@ -5,6 +5,7 @@ define([
   'EJS',
   'domReady!'
 ], function($, _, Backbone, EJS){
+  window.gallary = window.gallary || {};
   return Backbone.View.extend({
     el: "#J_SelectBar",
     initialize: function(){
@@ -12,11 +13,16 @@ define([
       this.listenTo(this.model, "change", "modelChange");
     },
     events: {
-      "click #J_SelectAll": this.selectAll
+      "click #J_SelectAll": "selectAll"
     },
     //全选
     selectAll: function(e){
-      console.log(e.target.selected)
+      if(e.currentTarget.checked){
+        gallary.itemCollection.select();
+      }else{
+        gallary.itemCollection.unSelect();
+      }
+      console.log(e.currentTarget.checked)
     },
     modelChange: function(){
       //状态文字信息

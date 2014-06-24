@@ -24,7 +24,7 @@ requirejs.config({
     ItemFolder: "app/views/ItemFolder",   //文件夹视图
     ItemImage: "app/views/ItemImage",     //图片视图
     PicContainer: "app/views/PicContainer",   //列表容器
-    JSelectBarModel: "app/models/JSelectModel",   //操作项数据模型
+    JSelectBarModel: "app/models/JSelectBarModel",   //操作项数据模型
     JSelectBar: "app/views/JSelectBar"       //操作项视图
   },
   shim: {
