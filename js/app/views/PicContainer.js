@@ -18,6 +18,10 @@ define([
     el: "#J_PicContainer",
     initialize: function(){
       gallary.setResize();
+
+      $("#J_PicContainer").bind('contextmenu',function(e){
+        return false;
+      });
       //_.bindAll(this);
       this.listenTo(gallary.itemCollection, 'add', this.addOne);
       this.listenTo(gallary.itemCollection, 'reset', this.addAll);

@@ -8,18 +8,21 @@ define([
   'EJS',
   'domReady!'
 ], function($, _, Backbone, EJS){
+  window.gallary = window.gallary || {};
+
   return Backbone.View.extend({
     tagName: "div",
     className: "item ui-widget-content ui-selectee",
     templateId: "itemTemplatePic",
     initialize: function(){
       _.bindAll(this,"rightClick","clickSelected");
+
       this.listenTo(this.model, "change", this.render);
       //this.$el.find(".image").rightClick(this.rightClick);
     },
     events: {
       "click": "clickFunc",
-      "mousedown .image": "rightClick"
+      "mouseup .image": "rightClick"
     },
     //左键点击
     clickFunc: function(e){
@@ -27,12 +30,11 @@ define([
     },
     //右键点击事件
     rightClick: function(e){
+      e.stopPropagation();
       //this.clickSelected(e);
       if(e.which == 3){
-        $(e.currentTarget).parent().bind('contextmenu',function(e){
-          return false;
-        });
-        this.clickSelected(e)
+        this.clickSelected(e);
+        gallary.rightMenu.imageShow(e);
       }
     },
     //添加选中状态class

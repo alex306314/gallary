@@ -319,18 +319,9 @@
 <script type="text/template" id="tpl_control_bar">
   <a href="javascript:;"><i class="icon"></i>[%=name%]<span class="line"></span></a>
 </script>
-
+<!--右键菜单-->
 <script type="text/template" id="tpl_picright_menu">
-  [%if(replace){%]<li class="replace"><a href="javascript:;"><i class="icon"></i>替换</a></li>[%}%]
-  [%if(copy){%]<li class="copy"><a href="javascript:;"><i class="icon"></i>多图复制</a></li>[%}%]
-  [%if(move){%]<li class="move"><a href="javascript:;"><i class="icon"></i>移动</a></li>[%}%]
-  [%if(rename){%]<li class="rename"><a href="javascript:;"><i class="icon"></i>重命名</a></li>[%}%]
-  [%if(checkSee){%]<li class="check-see"><a href="javascript:;"><i class="icon"></i>查看引用</a></li>[%}%]
-  [%if(edit){%]<li class="edit"><a href="javascript:;"><i class="icon"></i>编辑</a></li>[%}%]
-  [%if(toPhone){%]<li class="tophone"><a href="javascript:;"><i class="icon"></i>适配手机</a></li>[%}%]
-  [%if(delete){%]<li class="delete"><a href="javascript:;"><i class="icon"></i>删除</a></li>[%}%]
-  [%if(upFile){%]<li class="upfile"><a href="javascript:;"><i class="icon"></i>上传文件</a></li>[%}%]
-  [%if(newFolder){%]<li class="newfolder"><a href="javascript:;"><i class="icon"></i>新建文件夹</a></li>[%}%]
+  <a href="javascript:;"><i class="icon"></i>[%=name%]</a>
 </script>
 
 

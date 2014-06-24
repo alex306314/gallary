@@ -29,7 +29,9 @@ requirejs.config({
     ControlBarModel: "app/models/ControlBarModel", //右侧菜单项 模型
     ControlBarCollection: "app/collections/ControlBarCollection",  //菜单项集合
     JControlBar: "app/views/JControlBar",     //命令控制条
-    JControlBarItem: "app/views/JControlBarItem"  //命令控制条单个项
+    JControlBarItem: "app/views/JControlBarItem",  //命令控制条单个项
+    RightClickMenuItem: "app/views/RightClickMenuItem", //右键菜单个项
+    RightClickMenu: "app/views/RightClickMenu"      //右键菜单视图
   },
   shim: {
     'backbone': {

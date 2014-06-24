@@ -36,11 +36,14 @@ define([
     modelChange: function(){
       //状态文字信息
       this.$(".selected-msg").text(this.model.get("selectedMsg"));
+
       var itemType = this.model.get("itemType");
       if(itemType==1){
         gallary.controlBar.addAll(gallary.folderBar);
       }else if(itemType==2){
         gallary.controlBar.addAll(gallary.imageBar);
+      }else{
+        gallary.controlBar.$el.html("");
       }
     },
     //已选集合添加事件

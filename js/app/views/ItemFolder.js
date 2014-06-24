@@ -8,6 +8,8 @@ define([
   'EJS',
   'domReady!'
 ], function($, _, Backbone, EJS){
+  window.gallary = window.gallary || {};
+
   return Backbone.View.extend({
     tagName: "div",
     className: "item ui-widget-content ui-selectee",
@@ -18,7 +20,7 @@ define([
     },
     events: {
       "click": "clickFunc",
-      "mousedown .folder": "rightClick"
+      "mouseup .folder": "rightClick"
     },
     clickFunc: function(e){
       this.clickSelected(e);
@@ -27,10 +29,8 @@ define([
     rightClick: function(e){
       //this.clickSelected(e);
       if(e.which == 3){
-        $(e.currentTarget).parent().bind('contextmenu',function(e){
-          return false;
-        });
         this.clickSelected(e);
+        gallary.rightMenu.folderShow(e);
       }
     },
     //添加选中状态class
