@@ -14,7 +14,12 @@ define([
     el: "#J_PicRightmenu",
     initialize: function(){
       _.bindAll(this, "imageShow", "hide");
-      $(document).click(this.hide);
+      var self = this;
+      $(document).click(function(e){
+        if(!$(e.target).parents("#J_PicRightmenu")[0]){
+          self.hide();
+        }
+      });
     },
     render: function(){
 
