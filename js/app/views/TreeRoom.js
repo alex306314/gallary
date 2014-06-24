@@ -129,6 +129,7 @@ define([
   function zTreeOnMouseDown(event, treeId, treeNode){
     if(treeNode){
       gallary.mouseDownId = treeNode.id;
+      gallary.getListByPager(treeNode, 1); //获取相关列表
     }
     console.log(treeNode);
   }
