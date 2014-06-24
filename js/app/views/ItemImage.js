@@ -28,15 +28,16 @@ define([
     //右键点击事件
     rightClick: function(e){
       //this.clickSelected(e);
-      $(e.target).bind('contextmenu',function(e){
-        return false;
-      });
       if(e.which == 3){
+        $(e.currentTarget).parent().bind('contextmenu',function(e){
+          return false;
+        });
         this.clickSelected(e)
       }
     },
     //添加选中状态class
     clickSelected: function(e){
+      $("#J_SelectAll")[0].checked = false;//取消全选
       if(!gallary.ctrl){
         gallary.selectedItems.singleAdd(this.model);//向已选择集合添加当前
         gallary.itemCollection.unSelect();  //取消数据集合中所有项的选中状态

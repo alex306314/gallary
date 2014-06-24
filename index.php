@@ -126,36 +126,9 @@
     <div class="page-bar clearfix">
       <div class="select-bar clearfix" id="J_SelectBar">
         <div class="select-all"><input id="J_SelectAll" title="全选/反选" type="checkbox"></div>
-        <div class="selected-msg">已经选择了1张图片</div>
-        <ul class="controlBar selected-controls" id="J_ControlBar">
-          <li style="display: list-item;" class="replace"><a href="javascript:;"><i class="icon"></i>替换<span
-                  class="line"></span></a></li>
-          <li style="display: none;" class="copy"><a href="javascript:;"><i class="icon"></i>多图复制<span class="line"></span></a>
-          </li>
-          <li style="display: list-item;" class="move"><a data-spm-anchor-id="a1z28.7093685.0.0" href="javascript:;"><i
-                  class="icon"></i>移动<span class="line"></span></a></li>
-          <li style="display: list-item;" class="rename"><a data-spm-anchor-id="a1z28.7093685.0.0" href="javascript:;"><i
-                  class="icon"></i>重命名<span class="line"></span></a></li>
-          <li style="display: list-item;" class="check-see"><a data-spm-anchor-id="a1z28.7093685.0.0" href="javascript:;"><i
-                  class="icon"></i>查看引用<span class="line"></span></a></li>
-          <li style="display: list-item;" class="edit"><a href="javascript:;"><i class="icon"></i>编辑<span
-                  class="line"></span></a></li>
-          <li style="display: list-item;" class="tophone"><a href="javascript:;"><i class="icon"></i>适配手机<span
-                  class="line"></span></a></li>
-          <li style="display: list-item;" class="delete"><a href="javascript:;"><i class="icon"></i>删除</a></li>
-        </ul>
-        <ul style="left: 976px; top: 278px; display: none;" class="right-menu selected-controls" id="J_PicRightmenu">
-          <li class="replace"><a href="javascript:;"><i class="icon"></i>替换</a></li>
-          <li class="copy"><a href="javascript:;"><i class="icon"></i>多图复制</a></li>
-          <li class="move"><a href="javascript:;"><i class="icon"></i>移动</a></li>
-          <li class="rename"><a href="javascript:;"><i class="icon"></i>重命名</a></li>
-          <li class="check-see"><a href="javascript:;"><i class="icon"></i>查看引用</a></li>
-          <li class="edit"><a href="javascript:;"><i class="icon"></i>编辑</a></li>
-          <li class="tophone"><a href="javascript:;"><i class="icon"></i>适配手机</a></li>
-          <li class="delete"><a href="javascript:;"><i class="icon"></i>删除</a></li>
-          <li class="upfile"><a href="javascript:;"><i class="icon"></i>上传文件</a></li>
-          <li class="newfolder"><a href="javascript:;"><i class="icon"></i>新建文件夹</a></li>
-        </ul>
+        <div class="selected-msg"></div>
+        <ul class="controlBar selected-controls" id="J_ControlBar"></ul>
+        <ul class="right-menu selected-controls" id="J_PicRightmenu"></ul>
       </div>
       <div style="display: none;" class="sort-bar" id="J_SortBar">
         <div class="is-show-folder">
@@ -340,6 +313,24 @@
     </div>
     [%}%]
   </div>
+</script>
+
+<!--控制条模板-->
+<script type="text/template" id="tpl_control_bar">
+  <a href="javascript:;"><i class="icon"></i>[%=name%]<span class="line"></span></a>
+</script>
+
+<script type="text/template" id="tpl_picright_menu">
+  [%if(replace){%]<li class="replace"><a href="javascript:;"><i class="icon"></i>替换</a></li>[%}%]
+  [%if(copy){%]<li class="copy"><a href="javascript:;"><i class="icon"></i>多图复制</a></li>[%}%]
+  [%if(move){%]<li class="move"><a href="javascript:;"><i class="icon"></i>移动</a></li>[%}%]
+  [%if(rename){%]<li class="rename"><a href="javascript:;"><i class="icon"></i>重命名</a></li>[%}%]
+  [%if(checkSee){%]<li class="check-see"><a href="javascript:;"><i class="icon"></i>查看引用</a></li>[%}%]
+  [%if(edit){%]<li class="edit"><a href="javascript:;"><i class="icon"></i>编辑</a></li>[%}%]
+  [%if(toPhone){%]<li class="tophone"><a href="javascript:;"><i class="icon"></i>适配手机</a></li>[%}%]
+  [%if(delete){%]<li class="delete"><a href="javascript:;"><i class="icon"></i>删除</a></li>[%}%]
+  [%if(upFile){%]<li class="upfile"><a href="javascript:;"><i class="icon"></i>上传文件</a></li>[%}%]
+  [%if(newFolder){%]<li class="newfolder"><a href="javascript:;"><i class="icon"></i>新建文件夹</a></li>[%}%]
 </script>
 
 

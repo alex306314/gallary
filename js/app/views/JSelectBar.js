@@ -15,6 +15,7 @@ define([
       _.bindAll(this,"modelChange");
       this.listenTo(this.model, "change", this.modelChange);
       this.listenTo(gallary.selectedItems,"add", this.selectedItemsAdd);//选中集合添加事件
+      this.listenTo(gallary.itemCollection, "add",this.item);
     },
     events: {
       "click #J_SelectAll": "selectAll"
@@ -35,6 +36,12 @@ define([
     modelChange: function(){
       //状态文字信息
       this.$(".selected-msg").text(this.model.get("selectedMsg"));
+      var itemType = this.model.get("itemType");
+      if(itemType==1){
+        gallary.controlBar.addAll(gallary.folderBar);
+      }else if(itemType==2){
+        gallary.controlBar.addAll(gallary.imageBar);
+      }
     },
     //已选集合添加事件
     selectedItemsAdd: function(){

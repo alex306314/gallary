@@ -4,12 +4,36 @@ define([
     'backbone',
     'TreeRoom',
     'InfoBox',
+    'ControlBarCollection',
+    'JControlBar',
     'domReady!'
-], function($, _, Backbone, TreeRoom, InfoBox){
+], function($, _, Backbone, TreeRoom, InfoBox, ControlBarCollection,JControlBar){
   window.gallary = window.gallary || {};
 
   gallary.getListByPagerUrl = "getListByPager.php";
   gallary.ctrl = false; //ctrl 键是否按下
+  gallary.controlBar = new JControlBar;
+
+  //folder 控制条
+  gallary.folderBar = new ControlBarCollection([
+    {action:"move", name: "移动", cls:"move"},
+    {action:"rename", name: "重命名", cls:"rename"},
+    {action:"delete", name: "删除", cls:"delete"}
+  ]);
+  //image 控制条
+  gallary.imageBar = new ControlBarCollection([
+    {action:"replace", name: "替换", cls:"replace"},
+    {action:"copy", name: "多图复制", cls:"copy"},
+    {action:"move", name: "移动", cls:"move"},
+    {action:"rename", name: "重命名", cls:"rename"},
+    {action:"checkSee", name: "查看引用", cls:"check-see"},
+    {action:"edit", name: "编辑", cls:"edit"},
+    {action:"toPhone", name: "适配手机", cls:"tophone"},
+    {action:"delete", name: "删除", cls:"delete"}
+  ]);
+
+
+
 
   //
   $(window).keydown(function(e){

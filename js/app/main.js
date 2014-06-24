@@ -25,7 +25,11 @@ requirejs.config({
     ItemImage: "app/views/ItemImage",     //图片视图
     PicContainer: "app/views/PicContainer",   //列表容器
     JSelectBarModel: "app/models/JSelectBarModel",   //操作项数据模型
-    JSelectBar: "app/views/JSelectBar"       //操作项视图
+    JSelectBar: "app/views/JSelectBar",       //操作项视图
+    ControlBarModel: "app/models/ControlBarModel", //右侧菜单项 模型
+    ControlBarCollection: "app/collections/ControlBarCollection",  //菜单项集合
+    JControlBar: "app/views/JControlBar",     //命令控制条
+    JControlBarItem: "app/views/JControlBarItem"  //命令控制条单个项
   },
   shim: {
     'backbone': {
