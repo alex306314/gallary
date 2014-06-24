@@ -37,9 +37,13 @@ define([
     },
     //添加选中状态class
     clickSelected: function(e){
-      gallary.selectedItems.singleAdd(this);
-      gallary.itemCollection.unSelect();
-      this.model.select();
+      if(!gallary.ctrl){
+        gallary.selectedItems.singleAdd(this.model);//向已选择集合添加当前
+        gallary.itemCollection.unSelect();  //取消数据集合中所有项的选中状态
+      }else{
+        gallary.selectedItems.add(this.model);
+      }
+      this.model.select();   //改变当前项模型数据
     },
     render:function(){
       var self = this;

@@ -1,3 +1,6 @@
+/**
+ * 控制条视图
+ */
 define([
   'jquery',
   'underscore',
@@ -10,7 +13,8 @@ define([
     el: "#J_SelectBar",
     initialize: function(){
       _.bindAll(this,"modelChange");
-      this.listenTo(this.model, "change", "modelChange");
+      this.listenTo(this.model, "change", this.modelChange);
+      this.listenTo(gallary.selectedItems,"add", this.selectedItemsAdd);//选中集合添加事件
     },
     events: {
       "click #J_SelectAll": "selectAll"
@@ -31,6 +35,22 @@ define([
     modelChange: function(){
       //状态文字信息
       this.$(".selected-msg").text(this.model.get("selectedMsg"));
+    },
+    //已选集合添加事件
+    selectedItemsAdd: function(){
+      var msg, itemType = 0;
+      var folderNum = gallary.selectedItems.getFolderNum();
+      var imageNum = gallary.selectedItems.getImageNum();
+      if(!folderNum){
+        msg = "已经选择了"+ imageNum +"张图片";
+        itemType = 2;
+      }else if(!imageNum){
+        msg = "已经选择了"+ folderNum +"个文件夹";
+        itemType = 1;
+      }else{
+        msg = "已经选择了"+ folderNum +"个文件夹和"+ imageNum +"张图片";
+      }
+      this.model.set({selectedMsg: msg, itemType:itemType});
     }
   });
 });

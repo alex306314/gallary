@@ -36,6 +36,14 @@ define([
           item.unSelect();
         }
       });
+    },
+    //获取folder 的数量
+    getFolderNum: function(){
+      return (this.where({type:1})).length;
+    },
+    //获取image 的数量
+    getImageNum: function(){
+      return (this.where({type:2})).length;
     }
   });
 });
