@@ -15,6 +15,11 @@ define([
       this.reset();
       this.add(item);
     },
+    //添加多个值
+    multiAdd: function(items){
+      this.reset();
+      this.add(items);
+    },
     //选中所有
     select: function(){
       this.each(function(item){

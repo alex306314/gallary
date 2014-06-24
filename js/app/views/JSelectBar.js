@@ -19,10 +19,14 @@ define([
     selectAll: function(e){
       if(e.currentTarget.checked){
         gallary.itemCollection.select();
+        //添加所有项到已选中集合中
+        gallary.selectedItems.multiAdd(gallary.itemCollection.toJSON());
       }else{
         gallary.itemCollection.unSelect();
+        //从选中集合删除所有项
+        gallary.selectedItems.reset();
       }
-      console.log(e.currentTarget.checked)
+      //console.log(e.currentTarget.checked)
     },
     modelChange: function(){
       //状态文字信息

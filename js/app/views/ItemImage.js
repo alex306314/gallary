@@ -34,7 +34,6 @@ define([
       if(e.which == 3){
         this.clickSelected(e)
       }
-
     },
     //添加选中状态class
     clickSelected: function(e){
