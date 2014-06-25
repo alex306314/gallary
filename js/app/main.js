@@ -31,7 +31,8 @@ requirejs.config({
     JControlBar: "app/views/JControlBar",     //命令控制条
     JControlBarItem: "app/views/JControlBarItem",  //命令控制条单个项
     RightClickMenuItem: "app/views/RightClickMenuItem", //右键菜单个项
-    RightClickMenu: "app/views/RightClickMenu"      //右键菜单视图
+    RightClickMenu: "app/views/RightClickMenu",      //右键菜单视图
+    ItemFolderImageBase: "app/views/ItemFolderImageBase"  // 文件夹 图片视图基类
   },
   shim: {
     'backbone': {

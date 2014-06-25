@@ -269,7 +269,7 @@
         </div>-->
       </div>
       <div class="folder-name" title="[%=name%]">[%=name%]</div>
-      <input type="text" value="[%=name%]"/>
+      [%if(isReName){%]<input type="text" value="[%=name%]" class="rename"/>[%}%]
     </div>
     <div class="out">文件夹</div>
     <div class="out"></div>
@@ -285,7 +285,7 @@
     <div class="base-msg">
       <div class="img-container"><img src="[%=url%]" alt=""></div>
       <div class="img-name" title="[%=name%]">[%=name%]</div>
-      <input type="text" value="[%=name%]"/>
+      [%if(isReName){%]<input type="text" value="[%=name%]" class="rename"/>[%}%]
       [%if(isref==1){%]
       <div class="qout icon"></div>
       [%}%]

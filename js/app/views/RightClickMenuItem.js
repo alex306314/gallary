@@ -72,7 +72,10 @@ define([
     },
     //重命名
     funcRename: function(){
-      
+      if(gallary.selectedItems.length == 1){
+        var item = gallary.selectedItems.first();
+        item.set({isReName: true});
+      }
     },
     //查看引用
     funcCheckSee: function(){

@@ -7,6 +7,7 @@ define([
   'underscore',
   'backbone'
 ], function($, _, Backbone){
+  window.gallary = window.gallary || {};
   return Backbone.Model.extend({
     defaults: {
       id: -1, //当前ID
@@ -23,6 +24,7 @@ define([
       freezed: 0,    //是否冻结图片
       why: "why",    //冻结原因
       selected: false, //是否选中
+      isReName: false,  //是否重命名状态
       eurl: "",   //复制链接
       ecode: ""   //复制图片
     },
@@ -38,6 +40,19 @@ define([
     },
     unSelect: function(){
       this.set({selected:false});
+    },
+    //重命名
+    reName: function(name){
+      this.set({name:name, isReName:false});
+      var postData = {
+        action:"rename",
+        id: this.get('id'),
+        name: name
+      };
+
+      $.post(gallary.getListByPagerUrl, postData, function(data){
+
+      }, "json");
     }
   });
 });

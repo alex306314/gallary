@@ -44,6 +44,12 @@ define([
     //获取image 的数量
     getImageNum: function(){
       return (this.where({type:2})).length;
+    },
+    //取消重命名状态
+    cancelReName: function(){
+      this.each(function(item){
+        item.set({isReName: false});
+      },this);
     }
   });
 });

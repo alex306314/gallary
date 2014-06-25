@@ -38,6 +38,14 @@ define([
   gallary.selectBarModel = new JSelectBarModel;  //控制命令条数据模型
   gallary.selectBar = new JSelectBar({model: gallary.selectBarModel});//控制命令条视图
 
+  $(document).click(function(e){
+    if(gallary.selectedItems.length === 1
+        && gallary.selectedItems.first().get("isReName")
+        && !$(e.target).parents("#J_PicRightmenu")[0]
+        && !$(e.target).parents(".ui-widget-content")[0]){
+      gallary.itemCollection.cancelReName();
+    }
+  });
 
   var ztree,   //目录树对象
        treeMenu,// 目录树右键菜单
