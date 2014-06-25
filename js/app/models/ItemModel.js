@@ -53,6 +53,7 @@ define([
         data: postData,
         success: function(data){
           self.set({name:name, isReName:false});
+          gallary.infobox.showInfo("修改成功!");
         }
       });
     }

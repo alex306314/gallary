@@ -42,6 +42,7 @@ define([
     if(gallary.selectedItems.length === 1
         && gallary.selectedItems.first().get("isReName")
         && !$(e.target).parents("#J_PicRightmenu")[0]
+        && !$(e.target).parents("#J_ControlBar")[0]
         && !$(e.target).parents(".ui-widget-content")[0]){
       gallary.itemCollection.cancelReName();
     }
@@ -55,7 +56,7 @@ define([
        picContainer = new PicContainer,   //列表项view
        test;
 
-
+  gallary.dialog = dialog;
 
   /**
    * 检测window resize事件
@@ -184,7 +185,7 @@ define([
 
     },
     postCallback: function(data){
-      ztree = $.fn.zTree.init(this.$el, setting,data); //实例化目录树
+      gallary.ztree = ztree = $.fn.zTree.init(this.$el, setting,data); //实例化目录树
       treeMenu = new TreeMenu({ztree:ztree,dialog: dialog}); // 实例化目录树右键菜单
       pageFooter.render();
       gallary.getListByPager(data.id,1); //获取默认顶级目录数据

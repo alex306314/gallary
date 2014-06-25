@@ -17,6 +17,7 @@ define([
   gallary.controlBar = new JControlBar; //控制菜单
   gallary.rightMenu = new RightClickMenu; //右键菜单
 
+
   //folder 控制条
   gallary.folderBar = new ControlBarCollection([
     {action:"move", name: "移动", cls:"move"},
