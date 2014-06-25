@@ -91,7 +91,22 @@ define([
     },
     //删除
     funcDelete: function(){
+      if(gallary.selectedItems.length == 1){
+        var item = gallary.selectedItems.first();
+        if(confirm("你确定要删除: " + item.get("name") + " 吗？")){
+          var postData = {
+            action: 'delete',
+            id: item.get("id")
+          };
+          gallary.ajax({
+            data: postData,
+            success: function(data){
+              gallary.itemCollection.remove(gallary.itemCollection.get(item.cid));
+            }
+          });
 
+        }
+      }
     }
   });
 });

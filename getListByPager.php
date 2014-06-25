@@ -1,6 +1,6 @@
 <?php
 $id = $_POST['id'];
-$page = $_POST['page'];
+$page = isset($_POST['page'])?$_POST['page']:1;
 $data = array(
     "id" => $id,
     "page" => $page,

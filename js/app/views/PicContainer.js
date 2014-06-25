@@ -25,6 +25,7 @@ define([
       //_.bindAll(this);
       this.listenTo(gallary.itemCollection, 'add', this.addOne);
       this.listenTo(gallary.itemCollection, 'reset', this.addAll);
+      this.listenTo(gallary.itemCollection, 'remove', this.addAll);
     },
     events: {
     },

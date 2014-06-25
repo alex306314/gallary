@@ -35,7 +35,19 @@ define([
     {action:"delete", name: "删除", cls:"delete"}
   ]);
 
-
+  //ajax 提交 默认参数包装
+  gallary.ajax = function(options){
+    var defaults = {//默认参数
+      type: "post",
+      url: gallary.getListByPagerUrl,
+      data: {},
+      dataType: 'json',
+      success: function(){},
+      beforeSend: function(){}
+    };
+    $.extend(defaults, options);
+    $.ajax(defaults);
+  };
 
 
   //

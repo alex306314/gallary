@@ -43,16 +43,18 @@ define([
     },
     //重命名
     reName: function(name){
-      this.set({name:name, isReName:false});
+      var self = this;
       var postData = {
         action:"rename",
         id: this.get('id'),
         name: name
       };
-
-      $.post(gallary.getListByPagerUrl, postData, function(data){
-
-      }, "json");
+      gallary.ajax({
+        data: postData,
+        success: function(data){
+          self.set({name:name, isReName:false});
+        }
+      });
     }
   });
 });
