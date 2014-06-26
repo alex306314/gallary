@@ -6,9 +6,8 @@ define([
   'underscore',
   'backbone',
   'EJS',
-  'ItemAction',
   'domReady!'
-], function($, _, Backbone, EJS,act){
+], function($, _, Backbone, EJS){
   window.gallary = window.gallary || {};
   return Backbone.View.extend({
     tagName: "li",
@@ -39,10 +38,10 @@ define([
 
           break;
         case "move":
-          act.move();
+          gallary.itemAction.move();
           break;
         case "rename":
-          act.reName();
+          gallary.itemAction.reName();
           break;
         case "checkSee":
 
@@ -54,7 +53,7 @@ define([
 
           break;
         case "delete":
-          act.delete();
+          gallary.itemAction.delete();
           break;
       }
       gallary.rightMenu.hide();

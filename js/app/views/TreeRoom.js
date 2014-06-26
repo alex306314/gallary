@@ -14,14 +14,14 @@ define([
   'ItemCollection',
   'JSelectBarModel',
   'JSelectBar',
-  '',
+  'ItemAction',
   'jquery.zTree',
   'jquery.zTree.exedit',
   "jquery.contextMenu",
   'jquery.rightClick',
   'domReady!'
 ], function($, _, Backbone, TreeMenu, Dialog, PagerModel,PageFooter,PicContainer,
-            ItemCollection, JSelectBarModel, JSelectBar){
+            ItemCollection, JSelectBarModel, JSelectBar, ItemAction){
   window.gallary = window.gallary||{};
   //设置窗口大小
   gallary.setResize = function(){
@@ -37,6 +37,7 @@ define([
   gallary.selectedItems = new ItemCollection; //选中状态 Item 集合
   gallary.selectBarModel = new JSelectBarModel;  //控制命令条数据模型
   gallary.selectBar = new JSelectBar({model: gallary.selectBarModel});//控制命令条视图
+  gallary.itemAction = new ItemAction;  //命令条及右键菜单动作实现
 
   $(document).click(function(e){
     if(gallary.selectedItems.length === 1

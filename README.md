@@ -45,6 +45,7 @@ item.type 属性值:
 
 
 app
+
     infoBox  信息提示框
     treeRoom 左侧目录树
 
