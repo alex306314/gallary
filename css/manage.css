@@ -1642,8 +1642,8 @@ object, iframe {
 
 .up-modal .choose-plu .btn {
   font-size: 14px;
-  padding: 6px 22px;
-  border-radius: 3px
+  border-radius: 3px;
+  padding:0;
 }
 
 .up-modal .activex-up {
@@ -1657,7 +1657,7 @@ object, iframe {
 }
 
 .up-modal .activex-up .without-plu {
-  background-image: url('http://gtms01.alicdn.com/tps/i1/T1QEE6FXNeXXb1Raws-110-310.png');
+  background-image: url('../images/110_310.png');
   background-repeat: no-repeat;
   background-position: center 58px;
   display: block;
@@ -1672,7 +1672,7 @@ object, iframe {
 }
 
 .up-modal .activex-up .with-plu {
-  background: url('http://gtms01.alicdn.com/tps/i1/T1FlBbFt8aXXXpUK2k-62-56.png') no-repeat;
+  background: url('../images/T1FlBbFt8aXXXpUK2k-62-56.png') no-repeat;
   background-position: center center;
   display: none;
   height: 150px
@@ -1729,20 +1729,17 @@ object, iframe {
 }
 
 .up-modal .flash-up {
-  background-image: url('http://gtms01.alicdn.com/tps/i1/T1QEE6FXNeXXb1Raws-110-310.png');
+  background-image: url('../images/110_310.png');
   background-repeat: no-repeat;
   background-position: center -165px;
   background-color: #fff;
-  width: 203px;
-  margin-left: 20px;
+  width: 100%;
   position: relative;
   overflow: hidden
 }
 
 .up-modal .flash-up .btn {
-  position: absolute;
-  left: 50px;
-  bottom: 23px
+  
 }
 
 .up-modal .up-tips {
@@ -1856,7 +1853,7 @@ object, iframe {
 .do-flash-up .up-head span {
   float: right;
   text-indent: -9999em;
-  background-image: url('http://gtms01.alicdn.com/tps/i1/T1UC8bFypdXXXzCwr6-168-200.png');
+  background-image: url('../images/168_200.png');
   background-repeat: no-repeat;
   display: inline-block;
   width: 12px;
@@ -1946,7 +1943,7 @@ object, iframe {
 }
 
 .do-flash-up .up-container .img-icon {
-  background: url('http://gtms01.alicdn.com/tps/i1/T1UC8bFypdXXXzCwr6-168-200.png') no-repeat -137px -152px;
+  background: url('../images/168_200.png') no-repeat -137px -152px;
   display: inline-block;
   width: 26px;
   height: 26px;
@@ -1965,7 +1962,7 @@ object, iframe {
   display: inline-block;
   width: 18px;
   height: 18px;
-  background-image: url('http://gtms01.alicdn.com/tps/i1/T1UC8bFypdXXXzCwr6-168-200.png');
+  background-image: url('../images/168_200.png');
   background-repeat: no-repeat;
   text-indent: 9999em;
   margin: 11px;
@@ -2038,7 +2035,7 @@ object, iframe {
 .ie8-model .infor-msg {
   padding-left: 125px;
   font-size: 14px;
-  background: url('http://gtms01.alicdn.com/tps/i1/T1y7yVFulbXXcIpo.6-114-84.png') no-repeat
+  background: url('../images/114_84.png') no-repeat
 }
 
 .reference-modal .img-msg {
@@ -2561,12 +2558,12 @@ object, iframe {
 
 .slide-prev-page {
   left: 5px;
-  background: url("http://img02.taobaocdn.com/tps/i2/T1CoGGXuleXXagdtzh-50-56.png") no-repeat -1px 2px
+  background: url("../images/50_56.png") no-repeat -1px 2px
 }
 
 .slide-next-page {
   right: 5px;
-  background: url("http://img02.taobaocdn.com/tps/i2/T1CoGGXuleXXagdtzh-50-56.png") no-repeat -30px 2px
+  background: url("../images/50_56.png") no-repeat -30px 2px
 }
 
 .slide-prev-page-disabled, .slide-next-page-disabled {
@@ -2819,8 +2816,8 @@ object, iframe {
   background-color: transparent;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-image: url("http://gtms01.alicdn.com/tps/i1/T1HL6oFjNfXXchRPHe-160-97.png");
-  *background-image: url("http://gtms04.alicdn.com/tps/i4/T1ZsLyFeJXXXb9OzHe-160-97.gif")
+  background-image: url("../images/160_97.png");
+  *background-image: url("../images/160_97_.gif")
 }
 
 .ztree li span.button.chk {
@@ -3035,8 +3032,8 @@ span.tmpzTreeMove_arrow {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: -110px -80px;
-  background-image: url("http://gtms02.alicdn.com/tps/i2/T1AVDmFaxhXXchRPHe-160-97.png");
-  *background-image: url("http://gtms01.alicdn.com/tps/i1/T13m2wFkBaXXb9OzHe-160-97.gif")
+  background-image: url("../images/T1AVDmFaxhXXchRPHe-160-97.png");
+  *background-image: url("../images/T13m2wFkBaXXb9OzHe-160-97.gif")
 }
 
 ul.ztree.zTreeDragUL {
@@ -3062,4 +3059,27 @@ ul.ztree.zTreeDragUL {
 
 .ztree {
   padding: 0;
+}
+.btn_file_upload_w{
+  display: inline-block;
+  margin-top:115px;
+  width:110px;
+  height: 45px;
+}
+.uploadify-button{
+  background: transparent;
+  cursor: pointer;
+}
+#SWFUpload_0:hover .uploadify-button,
+.uploadify-button:hover{
+  color:white;
+}
+#btn_file_upload-queue{
+  display: none;
+    height: 210px;
+    left: 10px;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    background-color: white;
 }

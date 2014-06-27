@@ -12,9 +12,10 @@ define([
   return Backbone.View.extend({
     el: "#J_SelectBar",
     initialize: function(){
-      _.bindAll(this,"modelChange");
+      _.bindAll(this,"modelChange","selectedItemsReset");
       this.listenTo(this.model, "change", this.modelChange);
       this.listenTo(gallary.selectedItems,"add", this.selectedItemsAdd);//选中集合添加事件
+      this.listenTo(gallary.selectedItems,"reset", this.selectedItemsReset);
       this.listenTo(gallary.itemCollection, "add",this.item);
     },
     events: {
@@ -61,6 +62,12 @@ define([
         msg = "已经选择了"+ folderNum +"个文件夹和"+ imageNum +"张图片";
       }
       this.model.set({selectedMsg: msg, itemType:itemType});
+    },
+    //未选择目标状态
+    selectedItemsReset: function(){
+      var folderNum = gallary.itemCollection.getFolderNum();
+      var imageNum = gallary.itemCollection.getImageNum();
+      this.model.set({selectedMsg:"当前目录共有"+ folderNum +"个文件夹和"+ imageNum +"张图片", itemType:0});
     }
   });
 });

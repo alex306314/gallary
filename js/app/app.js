@@ -7,16 +7,17 @@ define([
     'ControlBarCollection',
     'JControlBar',
     'RightClickMenu',
+    'UpAndNew',
     'domReady!'
 ], function($, _, Backbone, TreeRoom, InfoBox, ControlBarCollection,JControlBar,
-            RightClickMenu){
+            RightClickMenu, UpAndNew){
   window.gallary = window.gallary || {};
 
   gallary.getListByPagerUrl = "getListByPager.php";
   gallary.ctrl = false; //ctrl 键是否按下
   gallary.controlBar = new JControlBar; //控制菜单
   gallary.rightMenu = new RightClickMenu; //右键菜单
-
+  new UpAndNew;
 
   //folder 控制条
   gallary.folderBar = new ControlBarCollection([

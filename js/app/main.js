@@ -7,6 +7,9 @@ requirejs.config({
     "underscore" : "lib/underscore",
     "domReady": "lib/require.domready",
     "text" : "lib/require.text",
+    "swfupload": "lib/uploadify/SWFUpload",
+    "swfobject": "lib/uploadify/swfobject",
+    "jquery.uploadify": "lib/uploadify/jquery.uploadify", // 多文件上传
     "EJS" : "lib/ejs",
     "jquery.zTree": "lib/jquery.ztree.core-3.5",
     "jquery.zTree.exedit": "lib/jquery.ztree.exedit-3.5",
@@ -33,7 +36,12 @@ requirejs.config({
     RightClickMenuItem: "app/views/RightClickMenuItem", //右键菜单个项
     RightClickMenu: "app/views/RightClickMenu",      //右键菜单视图
     ItemFolderImageBase: "app/views/ItemFolderImageBase",  // 文件夹 图片视图基类
-    ItemAction: "app/views/ItemAction"   //item 单个项目处理
+    ItemAction: "app/views/ItemAction" ,  //item 单个项目处理
+    UpAndNew: "app/views/UpAndNew",     //上传新建文件夹
+    UpFileModal: "app/views/UpFileModal",    //上传文件弹出框
+    CrumbsModel: "app/models/CrumbsModel",    //主面包屑模型
+    CrumbsCollection: "app/collections/CrumbsCollection",    //主面包屑模型集合
+    Crumbs: "app/views/Crumbs",    //主面包屑视图
   },
   shim: {
     'backbone': {
@@ -61,6 +69,16 @@ requirejs.config({
     "jquery.rightClick":{
       deps: ['jquery'],
       exports: "jQuery.fn.rightClick"
+    },
+    "swfupload": {
+      exports: "SWFUpload"
+    },
+    swfobject: {
+      exports: "swfobject"
+    },
+    "jquery.uploadify": {
+      deps: ['jquery','swfupload','swfobject'],
+      exports: "jQuery.fn.uploadify"
     }
   }
 });

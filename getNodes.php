@@ -11,6 +11,20 @@ if (!isset($_POST['id'])) {
             'name' => 'folder1',
             'pid' => 0,
             'isParent' => true,
+            "children" => array(
+              array(
+                  "id" => 108,
+                  "pid" => 101,
+                  "type" => 1,
+                  "name" => "folder111",
+              ),
+              array(
+                  "id" => 109,
+                  "pid" => 101,
+                  "type" => 1,
+                  "name" => "folder121",
+              ),
+            ),
         ),
         array(
             'id' => 2,

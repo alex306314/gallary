@@ -6,10 +6,16 @@
 
   <link href="css/seller-global-min.css" type="text/css" rel="stylesheet">
   <link href="css/common.css" type="text/css" rel="stylesheet">
-  <!--link href="css/zTreeStyle/zTreeStyle.css" type="text/css" rel="stylesheet"-->
   <link href="css/manage.css" type="text/css" rel="stylesheet">
+  <?php 
+    $timestamp = time();
+   ?>
+  <script type="text/javascript">
+    window.gallary = window.gallary || {};
+    gallary.timestamp = '<?php echo $timestamp; ?>';
+    gallary.token = '<?php echo md5('unique_salt' . $timestamp);?>';
+  </script>
   <script data-main="js/app/main.js" src="js/lib/require.min.js"></script>
-
 </head>
 <body>
 
@@ -44,20 +50,12 @@
 
   <div class="main-pannel">
     <div class="all-control-bar">
-      <ol class="breadcrumb" id="J_Crumbs">
-        <li class="active home"><i class="icon"></i>我的图片</li>
-      </ol>
+      <ol class="breadcrumb" id="J_Crumbs"></ol>
       <div class="control">
         <div class="control-buttons" id="J_UpAndNew">
-          <button data-spm-anchor-id="a1z28.7093685.0.d4916817" type="button" class="btn btn-primary up"
-                  data-spm-click="gostr=/tbimage;locaid=d4916817">
-            <span class="up-icon"></span>上传图片
-          </button>
-          <button type="button" class="btn btn-default new" data-spm-click="gostr=/tbimage;locaid=d4916821">
-            <span class="new-icon"></span>新建文件夹
-          </button>
-          <a type="button" href="" class="btn btn-default">
-            <span class="recycle-icon"></span>回收站</a>
+          <button type="button" class="btn btn-primary up"><span class="up-icon"></span>上传图片</button>
+          <button type="button" class="btn btn-default new"><span class="new-icon"></span>新建文件夹</button>
+          <a type="button" href="" class="btn btn-default recycle"><span class="recycle-icon"></span>回收站</a>
         </div>
         <div class="search" id="J_SearForm">
           <div class="search-form">
@@ -232,6 +230,7 @@
     </div>
     <!-- /.modal-dialog -->
   </div><!--modal dialog end-->
+
   <div class="modal-backdrop fade" style="display: none"></div>
 
 
@@ -323,6 +322,12 @@
 <script type="text/template" id="tpl_picright_menu">
   <a href="javascript:;"><i class="icon"></i>[%=name%]</a>
 </script>
+
+<!--右侧主界面 面包屑-->
+<script type="text/template" id="tpl_crumbs">
+  <li class="active home"><i class="icon"></i>[%=name%]</li>
+</script>
+
 
 
 
